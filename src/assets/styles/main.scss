@@ -1,0 +1,117 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    height: 100vh;
+    margin: 0 auto;
+    box-sizing: border-box;
+}
+
+.container {
+    position: relative;
+    overflow: hidden;    
+    height: 100vh;
+    padding: 150px 300px;
+}
+  
+
+a {
+    text-decoration: none;
+    color: black;
+    
+}
+
+
+
+//============================== Colors ==============================================
+
+.green {
+    color: rgba(83, 232, 139);
+}
+
+$light-light-green: #e6f7f3;
+$light-green: #a9e8da;
+$green: #32a188;
+
+
+
+//============================== Headers and texts ===================================
+.header_22 {
+    font-size: 22px;
+    text-align: center;
+    font-weight: 600;        
+}
+.header_25 {
+    font-size: 25px;    
+    font-weight: 600;        
+}
+.subheader {
+    font-size: 12px;
+    font-weight: 600;
+    text-align: center;
+}
+
+.text__12__normal {
+    font-size: 12px;    
+    font-weight: 400;  
+}
+.text__14__normal {
+    font-size: 14px;    
+    font-weight: 400;  
+}
+
+.text__14__bold {
+    font-style: 14px;
+    font-weight: 600;
+}
+.center {
+    text-align: center;
+}
+//============================= Buttons =================================================
+
+button {
+    cursor: pointer;  
+    border: 2px solid white;
+    text-transform: uppercase;
+    height: 70px;    
+    font-size: 25px !important;
+    letter-spacing: 1px;
+    font-weight: 600;
+
+    &:hover {
+        border: 2px solid $green;
+        box-shadow: 5px 5px 5px $light-green;
+    }
+}
+
+
+
+
+
+
+// ==================================== flex ====================================
+
+.flex {
+    display: flex;
+}
+    
+.flex-row {
+    flex-direction: row;
+}
+.justify-between  {
+    justify-content: space-between;
+}
+.justify-center {
+    justify-content: center;
+}
+.align-center {
+    align-items: center;
+}
+
+
+//========================================================================================================
+

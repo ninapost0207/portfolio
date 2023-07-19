@@ -1,0 +1,54 @@
+.home-page {
+    background-color: $light-light-green;
+
+    &__content {
+        margin: 200px auto;
+        width: 80%;
+        
+
+        & h1 {
+            color: $green;
+            font-size: 50px;
+            text-align: center;
+        }
+        & h3 {
+            color: grey;
+            font-size: 25px;
+            text-align: center;
+            padding-top: 50px;
+            letter-spacing: 1px;
+        }
+
+    }
+    &__icons-block {
+        margin: 100px auto;        
+        width: 70%;
+
+        &__item {
+            width: 100px;
+            height: 100px;
+        }
+    }
+    &__icon {
+        width: 100px;
+        height: 100px;
+        transition: 0.3s;
+        opacity: 0.7;
+        &:hover {
+            width: 105px;
+            height: 105px;
+        }
+    }
+}
+.facebook-icon {
+    width: 120px;
+    height: 120px;
+    margin-top: -10px;
+    margin-left: -10px;
+    &:hover {
+        width: 125px;
+        height: 125px;
+        margin-top: -12.5px;
+        margin-left: -12.5px;
+    }
+}
