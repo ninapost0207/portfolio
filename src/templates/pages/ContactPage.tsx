@@ -22,7 +22,7 @@ export default function ContactPage () {
 
     function openModal() {
       setIsOpen(true);
-      //setTimeout(() => closeModal(), 2000)
+      setTimeout(() => closeModal(), 2000)
     }     
   
     function closeModal() {
@@ -42,7 +42,7 @@ export default function ContactPage () {
         if (value !== undefined) setEmail(value)
     }
     const onChangeMessageHandler = (event: React.ChangeEvent<HTMLTextAreaElement>) => {
-        const value = event.target instanceof HTMLInputElement ? event.target.value : undefined;
+        const value = event.target instanceof HTMLTextAreaElement ? event.target.value : undefined;
         if (value !== undefined) setMessage(value)
     }
 
@@ -61,7 +61,7 @@ export default function ContactPage () {
         }
     }
     function sendMessage(message: Message) {
-        const bot = new Bot("----", "----");
+        const bot = new Bot(process.env.REACT_APP_TOKEN || '', process.env.REACT_APP_CHATID || '');
     
         bot.sendMessage(JSON.stringify(message), null, null, true)
             .then(res => {})
@@ -141,7 +141,7 @@ export default function ContactPage () {
 
     return (
         <div className='contact-page container'> 
-        <button  onClick={openModal}> OPEN</button>
+        
             <Modal
                 isOpen={modalIsOpen}            
                 onRequestClose={closeModal}  
@@ -154,7 +154,7 @@ export default function ContactPage () {
             </Modal>
             
             <h1 >Contact me</h1> 
-            <div className='flex flex-row justify-between align-center'>
+            <div className=' flex flex-row justify-between align-center contact-page_row'>
                 <form id="form-submit" className='contact-page__input-block' onSubmit={onSubmitHandler}>
                     <h4>Get in touch</h4>
                     <div className="contact-page__input-block__item">
@@ -171,7 +171,7 @@ export default function ContactPage () {
                     </div>
                     <div className="contact-page__input-block__item">
                         <label htmlFor="message" className="contact-page__input-block__label">Your Message:</label>                       
-                        <textarea className="contact-page__input-block__input" id="message" rows={8} cols={50} autoComplete="off"  value={message} onChange={onChangeMessageHandler}></textarea>   
+                        <textarea className="contact-page__input-block__input" id="message" rows={8} cols={50} value={message} onChange={onChangeMessageHandler}></textarea>   
                     </div>
                     <button type="submit" className="contact-page__input-block__button button">SEND MESSAGE</button>                        
                 </form>

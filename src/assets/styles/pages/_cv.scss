@@ -1,0 +1,102 @@
+.cv-page {
+    background-color: $light-light-green;
+
+    &__content {        
+        width: 100%;
+        
+        @include respond-to(md) { 
+            margin: 150px auto;  
+                
+        }
+
+        & h1 {
+            color: $green;
+            font-size: 50px;
+            
+            @include respond-to(md) {        
+                font-size: 40px;
+            }
+            @include respond-to(sm) {        
+                font-size: 30px;
+            }
+            
+        }
+    }
+    &__skills {
+        margin-bottom: 50px;
+        margin-top: 35px;
+        
+        @include respond-to(xs) {        
+            flex-direction: column !important;
+            margin-bottom: 30px;
+            margin-top: 20px;
+        }
+        &-block {
+            width: 45%;
+            @include respond-to(xs) {        
+                width: 100%;
+            }
+
+            &__item {
+                margin-top: 30px;
+    
+                h5 {
+                    color: $green;
+                    font-size: 20px;
+    
+                    @include respond-to(sm) {        
+                        font-size: 18px;
+                    }
+                }
+    
+                
+                .skill-graph {                
+                    width: 100%;      
+                    height: 5px;          
+                    margin-top: 10px;
+                    position: relative;                
+                    background-color: $light-green;
+                    border-radius: 5px;
+                    @include respond-to(md) {        
+                        width: 100%;
+                    }
+    
+                    .skill-graph__line {                         
+                        height: 5px;  
+                        position: absolute;
+                        top: 0;
+                        left: 0;                    
+                        background-color: $dark-green;
+                        border-radius: 5px;
+                        animation: underlining 1s cubic-bezier(.16,.67,.2,1) 0.7s 1 normal forwards;
+                    }
+                }
+                    
+                
+                
+            }
+        }
+
+    }
+    &__button {
+        color: $green;
+        margin-top: 25px;
+        padding-left: 55px;
+        padding-right: 55px;
+        border: 3px solid $green;
+        border-radius: 3px;
+        @include respond-to(sm) {        
+            width: 100%;           
+        }
+        @include respond-to(xs) {        
+            text-align: center;   
+            padding-left: 0;
+            padding-right: 0;        
+        }
+    }
+}
+
+@keyframes underlining {
+    0%   {width: 0;}      
+    100% {width: 100%;}
+}

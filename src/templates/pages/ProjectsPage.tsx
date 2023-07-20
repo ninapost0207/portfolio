@@ -1,6 +1,8 @@
 import { useEffect } from "react";
-import plenco from "../../assets/images/plenco-main.jpg";
-import formation from "../../assets/images/formation.jpg";
+import plenco from "../../assets/images/plenco/plenco-main.jpg";
+import formation from "../../assets/images/formation/formation.jpg";
+import repair from "../../assets/images/repair/repair_home.jpg";
+import irkswim from '../../assets/images/irkswim/irkswim_home_dark.jpg';
 
 export default function ProjectsPage () {
     let activeSlideIndex: number = 0;
@@ -57,47 +59,53 @@ export default function ProjectsPage () {
     return (
         <div className='projects-page__container'>            
             <div className="sidebar">
-                <div className="sidebar__item" style={{ background: 'red' }}>                      
+                <div className="sidebar__item" >                      
                     <a href="https://demo.wiseup.dev/plenco/home.html">
-                        <h1>Plenco</h1>
+                        <h1>Plenco</h1>                        
                     </a>
+                    
                 </div>
-                <div className="sidebar__item" style={{ background: 'blue' }}>
+                <div className="sidebar__item" >
                     <a href="https://www.formation.ai/">
                         <h1>Formation</h1>
                     </a>
                 </div>
-                <div className="sidebar__item" style={{ background: 'green' }}>
+                <div className="sidebar__item" >
                     <a href="https://www.irkswimming.ru/">
                         <h1>IrkSwimming</h1>
                     </a>
                 </div>
-                <div className="sidebar__item" style={{ background: 'yellow' }}>
+                <div className="sidebar__item" >
                     <a href="https://www.irkswimming.ru/">
                         <h1>Repair Design</h1>
                     </a>
                 </div>                
             </div>
             <div className="main-slide">
-                <div className="main-slide__item"
-                  style={{ background: "beige" }}
-                    
-                >   <div className="main-slide__image-container">
-                      <h1>Repair Design</h1>  
-                    </div></div>
-                <div className="main-slide__item"
-                  
-                >   <div className="main-slide__image-container">
-                        
+                <div className="main-slide__item">   
+                    <h5>New site template. Created using Figma drafts. Created frontend part like pages and gallery</h5>
+                    <h5>Stack: HTML, JS, CSS</h5>
+                    <div className="main-slide__image-container">
+                      <img src={ repair } alt="formation" />
                     </div>
                 </div>
-                <div className="main-slide__item"
-                >
+                <div className="main-slide__item">   
+                    <h5>Created frontend templates for Plenco company based on Bootstrap 5 using provided design in AdobeXD. </h5>
+                    <h5>Stack: Gulp, Twig, HTML, JS, Scss</h5>
+                    <div className="main-slide__image-container">                    
+                        <img src={ irkswim } alt="formation" />
+                    </div>
+                </div>
+                <div className="main-slide__item"                >
+                    <h5>New site template for Plenco company. Created using Figma drafts.  </h5>
+                    <h5>Stack: Gulp, Twig, HTML, JS, Scss</h5>
                     <div className="main-slide__image-container">
                         <img src={ formation } alt="formation" />
                     </div>
                 </div>
                 <div className="main-slide__item" >
+                    <h5>Created frontend templates for Plenco company based on Bootstrap 5 using provided design in AdobeXD. </h5>
+                    <h5>Stack: Gulp, Twig, Bootstrap 5, HTML, Tailwind, JS, Scss</h5>
                     <div className="main-slide__image-container">
                         <img src={ plenco } alt="plenco" />
                     </div>

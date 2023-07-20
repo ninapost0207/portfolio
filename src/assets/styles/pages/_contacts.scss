@@ -1,27 +1,64 @@
 .contact-page {
     background-color: $light-light-green;
 
+
+
     h1 {
         color: $green;
         font-size: 50px;
+
+        @include respond-to(md) {        
+            font-size: 40px;
+            text-align: center;
+        }
+        
+        @include respond-to(xs) {        
+            font-size: 35px;
+            padding-top: 50px;
+        }
+    }
+
+    &_row {
+        
+        @include respond-to(md) {        
+            flex-direction: column !important;     
+        }
     }
     &__input-block {
+        width: 45%;
+        
+        @include respond-to(lg) {        
+            width: 48%;
+        }
+        @include respond-to(md) {        
+            width: 70%;
+        }
+        @include respond-to(sm) {        
+            width: 100%;            
+        }
+        
         h4 {
             color: $green;
             font-size: 35px;
             padding-top: 50px;
+            @include respond-to(xs) {        
+                font-size: 25px;
+                padding-top: 30px;
+            }
         }
-        width: 40%;
         
         &__item {
-            padding-top: 30px;
+            padding-top: 37px;
+            @include respond-to(lg) {        
+                padding-top: 33px;
+            }
         }
     
         &__label {
             font-size: 20px;
         }
         &__input {
-            height: 65px;
+            height: 55px;
             width: 100%;
             border: 1px solid $green;
             background-color: $light-light-green;
@@ -30,6 +67,12 @@
             padding: 5px;
             padding-left: 10px;
             font-size: 30px;
+            @include respond-to(md) {        
+                height: 50px;
+            }
+            @include respond-to(sm) {        
+                height: 45px;           
+            }
 
             &:focus {
                 box-shadow: 5px 5px 5px $light-green;
@@ -42,40 +85,81 @@
             margin-top: 35px;
             padding-left: 55px;
             padding-right: 55px;
-            border: 3px solid $light-green;
+            border: 3px solid $green;
             border-radius: 3px;
+            @include respond-to(sm) {        
+                width: 100%;           
+            }
         }
     }
 
     &__contacts-block {
-        width: 40%;
+        width: 45%;
+        margin-top: 15px;
+        @include respond-to(xl) {   
+            margin-top: 12px;
+        }
+        @include respond-to(lg) {        
+            width: 49%; 
+            margin-top: 8px;           
+        }
+        @include respond-to(md) {        
+            width: 70%;
+        }
+        @include respond-to(sm) {        
+            width: 100%;            
+        }
 
         &__item {
             background-color: $light-green;
             width: 100%;
-            height: 130px;
+            height: 120px;
             margin-top: 30px;
+            @include respond-to(xl) {        
+                height: 117px;                 
+                margin-top: 35px;
+            }
+            @include respond-to(lg) {        
+                height: 111px; 
+            }
 
             & div {
                 margin-left: 35px;
+                @include respond-to(lg) {        
+                    margin-left: 20px;            
+                }
+                @include respond-to(xs) {        
+                    margin-left: 10px;            
+                }
                 & h6 {
-                    color: $green;
+                    color: $dark-green;
                     font-size: 25px;
+                    @include respond-to(xs) {        
+                        font-size: 20px;            
+                    }
                 }
                 & p {
                     color: black;
                     font-size: 20px;
                     padding-top: 15px;
+                    @include respond-to(lg) {        
+                        font-size: 18px;            
+                    }
                 }
             }
         }
         &__icon {
-            width: 80px;
-            height: 80px;            
+            width: 70px;
+            height: 70px;            
             margin-left: 25px;
-            opacity: 0.5;
+            opacity: 0.6;
             border: 5px solid $green;
             padding: 7px;
+            
+            @include respond-to(sm) {        
+                width: 50px;
+                height: 50px;            
+            }
         }
     }
 }
@@ -95,6 +179,12 @@
     border-radius: 5px;
     padding: 40px;
     min-height: 25%;
+    @include respond-to(md) {        
+        width: 50%;          
+    }
+    @include respond-to(sm) {        
+        width: 80%;          
+    }
     
     button {
         padding: 10px;
@@ -143,6 +233,7 @@
         padding-bottom: 25px;
         text-align: center;
         padding-top: 50px;
+        
     }
 
 }

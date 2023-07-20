@@ -1,3 +1,7 @@
+@import './base/_global.scss';
+@import './pages/_global.scss';
+@import './elements/_global.scss';
+
 * {
     box-sizing: border-box;
     margin: 0;
@@ -9,13 +13,29 @@ body {
     height: 100vh;
     margin: 0 auto;
     box-sizing: border-box;
+    overflow: auto;
 }
 
 .container {
     position: relative;
-    overflow: hidden;    
-    height: 100vh;
+    //overflow: hidden; 
     padding: 150px 300px;
+    height: fit-content;
+    @include respond-to(xl) {        
+        padding: 100px 150px;        
+    }
+    @include respond-to(lg) {        
+        padding: 100px 130px;        
+    }
+    @include respond-to(md) {        
+        padding: 100px 100px;        
+    }
+    @include respond-to(sm) {        
+        padding: 50px 50px;        
+    }
+    @include respond-to(xs) {        
+        padding: 50px 30px;        
+    }
 }
   
 
@@ -27,15 +47,7 @@ a {
 
 
 
-//============================== Colors ==============================================
 
-.green {
-    color: rgba(83, 232, 139);
-}
-
-$light-light-green: #e6f7f3;
-$light-green: #a9e8da;
-$green: #32a188;
 
 
 
@@ -77,20 +89,20 @@ button {
     cursor: pointer;  
     border: 2px solid white;
     text-transform: uppercase;
-    height: 70px;    
+    height: 60px;    
     font-size: 25px !important;
     letter-spacing: 1px;
     font-weight: 600;
+    @include respond-to(md) {        
+        font-size: 20px !important;   
+    }
+    
 
     &:hover {
         border: 2px solid $green;
         box-shadow: 5px 5px 5px $light-green;
     }
 }
-
-
-
-
 
 
 // ==================================== flex ====================================

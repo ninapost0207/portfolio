@@ -9,14 +9,25 @@
 
     &__button {
       background-color: #fff;
-      border: none;
-      color: #aaa;
-      cursor: pointer;
-      font-size: 16px;
-      padding: 15px;
+      border: 2px solid $green;      
+      cursor: pointer;  
+      height: 80px;
+      width: 50px;
 
-      &:hover {
-        color: #222;
+      .arrow_up {        
+        animation: notUp 0.3s ease-in-out forwards;
+      }
+      .arrow_down {        
+        animation: notDown 0.3s ease-in-out forwards;
+      }
+
+      &:hover .arrow_up{
+        color: $dark-green;
+        animation: up 0.3s ease-in-out forwards;
+      }
+      &:hover .arrow_down{
+        color: $dark-green;
+        animation: down 0.3s ease-in-out forwards;
       }
       &:focus {
         outline: none;
@@ -26,22 +37,29 @@
 }
   
 .sidebar {
-  height: 100%;
-  width: 25%;
-  position: absolute;  
-  top: 0;
-  left: 0;
-  transition: transform 0.5s ease-in-out;
+    height: 100%;
+    width: 25%;
+    position: absolute;  
+    top: 0;
+    left: 0;
+    transition: transform 0.5s ease-in-out;
 
   &__item {
-    height: 100%;
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    color: #fff;
-
+      height: 100%;
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;    
+      background-color: $light-green;
+      padding-left: 20px;
+      padding-right: 20px;
+      a {
+        h1 {
+          color: $dark-green;
+        }
+      }
+      
   }
 }
 
@@ -56,9 +74,7 @@
   transition: transform 0.5s ease-in-out;
 
   &__item {
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center center;
+    
     height: 100%;
     width: 100%;
     padding-top: 57px;   
@@ -66,10 +82,19 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-  
+    background-color: $light-light-green;
+    h5 {
+      color: $dark-green;
+      font-size: 20px;
+      line-height: 25px;
+      padding-top: 10px;
+      text-align: center;
+    }
   }
   &__image-container {
     width: 80%;
+    margin-top: 50px;
+    border: 2px solid $green;
 
     img {
       width: 100%;
@@ -103,7 +128,7 @@
     border-width: 4px 4px 0 0;
     border-style: solid;
     margin: 10px;
-    color: grey;
+    color: $green;
     position: relative;
     display: inline-block;
     vertical-align: middle;    
@@ -123,11 +148,26 @@
       transform-origin: right top;
     }
     &_up{
-      transform: rotate(-45deg);
+      transform: rotate(-45deg) ;
     }
     &_down{
       transform: rotate(135deg);
     }
 }
 
-
+@keyframes up {
+  0%   {transform: rotate(-45deg) translateY(0px);}      
+  100% {transform: rotate(-45deg) translateY(-10px) translateX(10px);}
+}
+@keyframes down {
+  0%   {transform: rotate(135deg) translateY(0px);}      
+  100% {transform: rotate(135deg) translateY(-10px) translateX(10px);}
+}
+@keyframes notUp {
+  0%   {transform: rotate(-45deg) translateY(-10px) translateX(10px);}      
+  100% {transform: rotate(-45deg) translateY(0px);}
+}
+@keyframes notDown {
+  0%   {transform: rotate(135deg) translateY(-10px) translateX(10px);}      
+  100% {transform: rotate(135deg) translateY(0px);}
+}
