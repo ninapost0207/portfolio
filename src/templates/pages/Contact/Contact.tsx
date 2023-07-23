@@ -1,8 +1,10 @@
-import React, { useState } from 'react';
+import  { useRef, useState } from 'react';
+
 import Modal from 'react-modal';
-import telephone from '../../assets/icons/phone.svg';
-import mail from '../../assets/icons/email.svg';
-import address from '../../assets/icons/home.svg';
+import telephone from '../../../assets/icons/phone.svg';
+import mail from '../../../assets/icons/email.svg';
+import address from '../../../assets/icons/home.svg';
+import './contacts.scss'
 
 Modal.setAppElement('#root');
 
@@ -13,73 +15,62 @@ interface Message {
     message: string
 }
 
-export default function ContactPage () {
-    const [name, setName] = useState('');
-    const [phone, setPhone] = useState('');
-    const [email, setEmail] = useState('');
-    const [message, setMessage] = useState('');
-    const [modalIsOpen, setIsOpen] = useState(false);
 
-    function openModal() {
+export default function Contact () {
+  const _name = useRef<HTMLInputElement>(null)
+  const _phone = useRef<HTMLInputElement>(null)
+  const _email = useRef<HTMLInputElement>(null)
+  const _message = useRef<HTMLTextAreaElement>(null)
+    
+    const [modalIsOpen, setIsOpen] = useState<boolean>(false);
+
+    function openModal() {      
       setIsOpen(true);
       setTimeout(() => closeModal(), 2000)
     }     
   
-    function closeModal() {
+    function closeModal() {      
       setIsOpen(false);
     }
 
-    const onChangeNameHandler = (event: React.ChangeEvent<HTMLInputElement>) => {
-        const value = event.target instanceof HTMLInputElement ? event.target.value : undefined;
-        if (value !== undefined) setName(value)
-    }
-    const onChangePhoneHandler = (event: React.ChangeEvent<HTMLInputElement>) => {
-        const value = event.target instanceof HTMLInputElement ? event.target.value : undefined;
-        if (value !== undefined) setPhone(value)
-    }
-    const onChangeEmailHandler = (event: React.ChangeEvent<HTMLInputElement>) => {
-        const value = event.target instanceof HTMLInputElement ? event.target.value : undefined;
-        if (value !== undefined) setEmail(value)
-    }
-    const onChangeMessageHandler = (event: React.ChangeEvent<HTMLTextAreaElement>) => {
-        const value = event.target instanceof HTMLTextAreaElement ? event.target.value : undefined;
-        if (value !== undefined) setMessage(value)
-    }
+    
 
     function onSubmitHandler(event: React.FormEvent) {
-        event.preventDefault();
-        if (name.length && phone.length && email.length) {
-            const info: Message = {
-                name: name,
-                phone: phone,
-                email:email,
-                message: message
-            }
-            sendMessage(info);
-            openModal()
-           
-        }
+      event.preventDefault();
+      if (!_name.current || !_email.current || !_phone.current || !_message.current) return
+      sendMessage({
+        name: _name.current.value,
+        email: _email.current.value,
+        phone: _phone.current.value,
+        message: _message.current.value
+      });      
+      openModal();
     }
+    
+           
+       
     function sendMessage(message: Message) {
         const bot = new Bot(process.env.REACT_APP_TOKEN || '', process.env.REACT_APP_CHATID || '');
     
         bot.sendMessage(JSON.stringify(message), null, null, true)
             .then(res => {})
             .then (() => {
-                setName('')
-                setPhone('')
-                setEmail('')
-                setMessage('')
+                if (!_name.current || !_email.current || !_phone.current || !_message.current) {
+                    return
+                };
+                _name.current.value = '';
+                _email.current.value = '';
+                _phone.current.value = '';
+                _message.current.value = '';
             })
             .catch(err => alert(err))   
-    
-        
     }
+
+
     class TelegramBotSetup {
         token: string;
         requestUrl: string;
         
-
         constructor(token: string) {
           this.token = token;
           this.requestUrl = 'https://api.telegram.org/bot';
@@ -148,30 +139,30 @@ export default function ContactPage () {
                 className="modal"
             >
                 <button onClick={closeModal}>
-                  <span className="cross"></span>
+                    <span className="cross"></span>
                 </button>
                 <h1>Thank you. Your message is delivered</h1>
             </Modal>
             
             <h1 >Contact me</h1> 
             <div className=' flex flex-row justify-between align-center contact-page_row'>
-                <form id="form-submit" className='contact-page__input-block' onSubmit={onSubmitHandler}>
+                <form id="form-submit" className='contact-page__input-block' onSubmit={onSubmitHandler} >
                     <h4>Get in touch</h4>
                     <div className="contact-page__input-block__item">
                         <label htmlFor="name" className="contact-page__input-block__label" >Your Name:</label>
-                        <input className="contact-page__input-block__input" id="name" value={name} onChange={onChangeNameHandler} required></input>                                    
+                        <input ref={_name} className="contact-page__input-block__input" name="name" type="text" required></input>                                    
                     </div>
                     <div className="contact-page__input-block__item">
                         <label htmlFor="phone" className="contact-page__input-block__label">Your Phone:</label>
-                        <input className="contact-page__input-block__input" id="phone" value={phone} onChange={onChangePhoneHandler} required></input>                                    
+                        <input ref={_phone} className="contact-page__input-block__input" name="phone" type="phone" required></input>                                    
                     </div>
                     <div className="contact-page__input-block__item">
                         <label htmlFor="email" className="contact-page__input-block__label">Your Email:</label>
-                        <input className="contact-page__input-block__input" id="email"  value={email} onChange={onChangeEmailHandler} required></input>                                    
+                        <input ref={_email} className="contact-page__input-block__input"  name="email"  type="email" required ></input>                                    
                     </div>
                     <div className="contact-page__input-block__item">
                         <label htmlFor="message" className="contact-page__input-block__label">Your Message:</label>                       
-                        <textarea className="contact-page__input-block__input" id="message" rows={8} cols={50} value={message} onChange={onChangeMessageHandler}></textarea>   
+                        <textarea ref={_message} className="contact-page__input-block__textarea" rows={8} cols={50} name="message" ></textarea>   
                     </div>
                     <button type="submit" className="contact-page__input-block__button button">SEND MESSAGE</button>                        
                 </form>
@@ -203,4 +194,5 @@ export default function ContactPage () {
             </div> 
         </div> 
       );
-}
+    
+  }

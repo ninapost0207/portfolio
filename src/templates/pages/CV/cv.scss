@@ -1,5 +1,9 @@
+@import '../../../assets/styles/base/variables';
+@import '../../../assets/styles/base/mixins';
+
 .cv-page {
     background-color: $light-light-green;
+    
 
     &__content {        
         width: 100%;

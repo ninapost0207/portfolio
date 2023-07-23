@@ -1,5 +1,5 @@
-
-export default function CVPage () {
+import './cv.scss'
+export default function CV () {
     
     return (
         <div className='cv-page container'>

@@ -1,6 +1,5 @@
 @import './base/_global.scss';
-@import './pages/_global.scss';
-@import './elements/_global.scss';
+
 
 * {
     box-sizing: border-box;
@@ -20,21 +19,21 @@ body {
     position: relative;
     //overflow: hidden; 
     padding: 150px 300px;
-    height: fit-content;
+    height: 100vh;
     @include respond-to(xl) {        
-        padding: 100px 150px;        
+        padding: 120px 150px;        
     }
     @include respond-to(lg) {        
-        padding: 100px 130px;        
+        padding: 120px 130px;        
     }
     @include respond-to(md) {        
-        padding: 100px 100px;        
+        padding: 110px 100px;        
     }
     @include respond-to(sm) {        
-        padding: 50px 50px;        
+        padding: 110px 50px;        
     }
     @include respond-to(xs) {        
-        padding: 50px 30px;        
+        padding: 80px 30px;        
     }
 }
   

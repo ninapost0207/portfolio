@@ -1,9 +1,9 @@
-import gitHub from "../../assets/icons/github.svg";
-import linkedIn from "../../assets/icons/linkedin.svg";
-import facebook from "../../assets/icons/facebook.svg";
+import gitHub from "../../../assets/icons/github.svg";
+import linkedIn from "../../../assets/icons/linkedin.svg";
+import facebook from "../../../assets/icons/facebook.svg";
+import './home.scss'
 
-
-export default function HomePage () {
+export default function Home () {
     return (
         <div className='home-page container'>
             <div className='home-page__content'>

@@ -1,3 +1,6 @@
+@import '../../../assets/styles/base/variables';
+@import '../../../assets/styles/base/mixins';
+
 .projects-page {
   
     &__container {
@@ -13,13 +16,21 @@
       cursor: pointer;  
       height: 80px;
       width: 50px;
+      position: absolute;
+      left: 25%;
+      top: 50%;
+      z-index: 2;
 
-      .arrow_up {        
-        animation: notUp 0.3s ease-in-out forwards;
+      &.button_down {
+        transform: translateX(-100%);
+        border-top-left-radius: 5px;
+        border-bottom-left-radius: 5px;
       }
-      .arrow_down {        
-        animation: notDown 0.3s ease-in-out forwards;
-      }
+      &.button_up {
+        transform: translateY(-100%);
+        border-top-right-radius: 5px;
+        border-bottom-right-radius: 5px;
+      }      
 
       &:hover .arrow_up{
         color: $dark-green;
@@ -32,6 +43,44 @@
       &:focus {
         outline: none;
       }
+      .arrow {     
+        width: 20px;
+        height: 20px;
+        border-width: 4px 4px 0 0;
+        border-style: solid;
+        margin: 10px;
+        color: $green;
+        position: relative;
+        display: inline-block;
+        vertical-align: middle;    
+        box-sizing: border-box;
+        &:after, &:before {
+          content: "";
+          box-sizing: border-box;
+        }
+        &:before{
+          right: 0;
+          top: -3px;
+          position: absolute;
+          height: 4px;
+          box-shadow: inset 0 0 0 32px;
+          transform: rotate(-45deg);
+          width: 35px;
+          transform-origin: right top;
+        }
+        &_up{
+          transform: rotate(-45deg) ;
+        }
+        &_down{
+          transform: rotate(135deg);
+        }
+        .arrow_up {        
+          animation: notUp 0.3s ease-in-out forwards;
+        }
+        .arrow_down {        
+          animation: notDown 0.3s ease-in-out forwards;
+        }
+    }
     }  
     
 }
@@ -40,9 +89,17 @@
     height: 100%;
     width: 25%;
     position: absolute;  
-    top: 0;
     left: 0;
-    transition: transform 0.5s ease-in-out;
+    transition: top 0.5s ease-in-out;
+    @include respond-to(md) {        
+      height: 100px;
+      width: 100%;
+      position: relative;
+      margin-top: 200px;
+      border: 3px solid red;
+      
+      left: 0;
+  }
 
   &__item {
       height: 100%;
@@ -68,10 +125,18 @@
 .main-slide {
   height: 100%;
   position: absolute;
-  top: 0;
   left: 25%;
   width: 75%;
-  transition: transform 0.5s ease-in-out;
+  transition: bottom 0.5s ease-in-out;
+
+
+  @include respond-to(md) {        
+    height: 100vh;
+    width: 100%;
+    position: relative;
+    left: 0;
+    top: 10px;
+}
 
   &__item {
     
@@ -93,8 +158,11 @@
   }
   &__image-container {
     width: 80%;
+    height: 530px;
     margin-top: 50px;
     border: 2px solid $green;
+    background-color: white;
+    border-radius: 5px;
 
     img {
       width: 100%;
@@ -104,56 +172,11 @@
 
 
 
-.projects-page__container .controls .projects-page__button {
-  position: absolute;
-  left: 25%;
-  top: 50%;
-  z-index: 100;
-}
 
-.projects-page__container .controls .down-button {
-  transform: translateX(-100%);
-  border-top-left-radius: 5px;
-  border-bottom-left-radius: 5px;
-}
 
-.projects-page__container .controls .up-button {
-  transform: translateY(-100%);
-  border-top-right-radius: 5px;
-  border-bottom-right-radius: 5px;
-}
-.arrow {     
-    width: 20px;
-    height: 20px;
-    border-width: 4px 4px 0 0;
-    border-style: solid;
-    margin: 10px;
-    color: $green;
-    position: relative;
-    display: inline-block;
-    vertical-align: middle;    
-    box-sizing: border-box;
-    &:after, &:before {
-      content: "";
-      box-sizing: border-box;
-    }
-    &:before{
-      right: 0;
-      top: -3px;
-      position: absolute;
-      height: 4px;
-      box-shadow: inset 0 0 0 32px;
-      transform: rotate(-45deg);
-      width: 23px;
-      transform-origin: right top;
-    }
-    &_up{
-      transform: rotate(-45deg) ;
-    }
-    &_down{
-      transform: rotate(135deg);
-    }
-}
+
+
+
 
 @keyframes up {
   0%   {transform: rotate(-45deg) translateY(0px);}      
