@@ -5,10 +5,12 @@ import Contact from './templates/pages/Contact/Contact';
 import Projects from "./templates/pages/Projects/ProjectsPage";
 import Home from "./templates/pages/Home/HomePage";
 import CV from "./templates/pages/CV/CVPage";
+import ThemeSwitcher from "./templates/elements/ThemeSwither/ThemeSwitcher";
 
 function App() {  
   return (
-    <BrowserRouter>      
+    <BrowserRouter>  
+        <ThemeSwitcher />    
         <NavBar />          
         <Routes>
             <Route path="/" element={ <Home />} />

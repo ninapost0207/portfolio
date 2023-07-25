@@ -8,6 +8,8 @@ export default function NavBar () {
     
     return (
     <nav>
+        
+
         <div className="mobile">
 		    <button  className={`mobile__button ${opened ? "open" : ""}`} aria-label="mobile menu" onClick={() => setOpened(!opened)}>
 		    	<span></span>

@@ -2,27 +2,20 @@
 @import '../../../assets/styles/base/mixins';
 
 .cv-page {
-    background-color: $light-light-green;
     
 
     &__content {        
         width: 100%;
         
         @include respond-to(md) { 
-            margin: 150px auto;  
-                
+            margin: 50px auto;                  
+        }
+        @include respond-to(sm) { 
+            margin: 30px auto;                  
         }
 
-        & h1 {
-            color: $green;
-            font-size: 50px;
-            
-            @include respond-to(md) {        
-                font-size: 40px;
-            }
-            @include respond-to(sm) {        
-                font-size: 30px;
-            }
+        & h1 {       
+            padding-top: 30px;           
             
         }
     }
@@ -33,7 +26,7 @@
         @include respond-to(xs) {        
             flex-direction: column !important;
             margin-bottom: 30px;
-            margin-top: 20px;
+            margin-top: 0px;
         }
         &-block {
             width: 45%;
@@ -45,7 +38,7 @@
                 margin-top: 30px;
     
                 h5 {
-                    color: $green;
+                    color: $dark-dark;
                     font-size: 20px;
     
                     @include respond-to(sm) {        
@@ -59,7 +52,7 @@
                     height: 5px;          
                     margin-top: 10px;
                     position: relative;                
-                    background-color: $light-green;
+                    background-color: $light;
                     border-radius: 5px;
                     @include respond-to(md) {        
                         width: 100%;
@@ -70,25 +63,20 @@
                         position: absolute;
                         top: 0;
                         left: 0;                    
-                        background-color: $dark-green;
+                        background-color: $dark;
                         border-radius: 5px;
                         animation: underlining 1s cubic-bezier(.16,.67,.2,1) 0.7s 1 normal forwards;
                     }
                 }
                     
-                
-                
             }
         }
 
     }
-    &__button {
-        color: $green;
+    &__button {        
         margin-top: 25px;
         padding-left: 55px;
-        padding-right: 55px;
-        border: 3px solid $green;
-        border-radius: 3px;
+        padding-right: 55px;  
         @include respond-to(sm) {        
             width: 100%;           
         }

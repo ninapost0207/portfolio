@@ -2,20 +2,19 @@
 @import '../../../assets/styles/base/mixins';
 
 nav {
-    border-bottom: 4px solid white;
-    
+    border-bottom: 4px solid $dark;    
     position: fixed;
     top: 0;
     width: 100%;
-    background: $green;    
+    background: $light-light;    
     z-index: 10;     
-    padding: 15px 300px;
+    padding: 0px 300px;
     
     @include respond-to(xl) {        
-        padding: 15px 150px;        
+        padding: 0px 150px;        
     }
     @include respond-to(lg) {        
-        padding: 15px 130px;        
+        padding: 0px 130px;        
     }
     @include respond-to(md) {        
         padding: 0px 0px;        
@@ -39,7 +38,7 @@ nav {
         &__button {
             display: block;
             position: fixed;
-            top: 10px;
+            top: 5px;
             right: 10px;
             border: none;
             background-color: transparent;
@@ -72,7 +71,7 @@ nav {
                 height: 6px;
                 width: 100%;
                 margin-bottom: 10px;
-                background-color: $light-light-green;
+                background-color: $dark;
                 transition: all .25s;
             }
             
@@ -80,7 +79,7 @@ nav {
         & .nav__menu_mobile {
             list-style-type: none;            
             display: block;
-            background-color: $light-green;
+            background-color: $light;
             padding: 50px;
             margin-top: 0;
             position: absolute;
@@ -106,21 +105,22 @@ nav {
                     pointer-events: none;
                     text-decoration: none;
                     font-size: 25px;
-                    color: $dark-green;
+                    
+                    color: $dark;
                     font-weight: bold;                    
                     width: 100%;
+                    
                     
                     @include respond-to(md) {
                         pointer-events: initial;        
                     }
 
-                    &:hover {
-                        background: $light-green;
-                        color: $green;
+                    &:hover {                        
+                        color: $dark-dark;
                     }
-                    &.active {
-                        background: $light-green;
-                        color: black;
+                    &.active {                        
+                        color: $dark-dark;
+                        text-decoration: underline;                        
                     }
                 }
             }
@@ -147,7 +147,7 @@ nav {
                 a {
                     text-decoration: none;
                     font-size: 22px;
-                    color: white;
+                    color: $dark-dark;
                     font-weight: bold;
                     padding: 16px 32px;
                     width: 100%;
@@ -156,13 +156,12 @@ nav {
                     }
 
                     &:hover {
-                        background: $light-green;
-                        color: $green;
+                        background: $light;                        
                     }
                     
                     &.active {
-                        background: $light-green;
-                        color: black;
+                        background: $main;
+                        color: $dark;
                     }
                 }
             }

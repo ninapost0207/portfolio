@@ -39,7 +39,8 @@ export default function Projects () {
         {portfolio.map((project) => {
             return (
                 <div className="main-slide__item" key={project.href}>   
-                    <h5>{project.deascription}</h5>
+                    <h5>{project.description}</h5>
+                    <h5>{project.stack}</h5>
                     <div className="main-slide__image-container">
                         <Gallery images={project.photos} />
                     </div>
@@ -50,7 +51,7 @@ export default function Projects () {
     
 
     return (
-        <div className='projects-page__container'>  
+        <div className='projects-page projects-page__container'>  
             {leftSlide}   
             {rightSlide}
             <div className="controls">

@@ -40,17 +40,19 @@ import plenco9 from "../../assets/images/plenco/plenco_9.jpg";
 
 const data = [
     {
-        header: "Repair <br/> Design",
-        href: "https://www.irkswimming.com",
-        deascription: "New site template. Created using Figma drafts. Created frontend part like pages and gallery. <br/> Stack: HTML, JS, CSS",
+        header: "Repair Design",
+        href: "https://github.com/ninapost0207/repair_design",
+        description: "New site template. Created using Figma drafts. Created frontend part like pages and gallery. ",
+        stack: "Stack: HTML, JS, CSS",
         photos: [
             repair, repair1, repair3, repair4, repair5, repair6, repair7, repair8
         ]
     },
     {
-        header: "IrkSwimming",
+        header: "Irkutsk Swimming",
         href: "https://www.irkswimming.ru/",
-        deascription: "New site template. <br/>Stack: Gulp, Twig, HTML, JS, Scss",
+        description: "New site template. ",
+        stack: "Stack: Gulp, Twig, HTML, JS, Scss",
         photos: [
             irkswim1, irkswim2, irkswim3, irkswim4, irkswim5, irkswim6, irkswim7 
         ]
@@ -58,7 +60,8 @@ const data = [
     {
         header: "Formation",
         href: "https://www.formation.ai/",
-        deascription: "New site template for Plenco company. Created using Figma drafts.  <br/>Stack: Gulp, Twig, HTML, JS, Scss",
+        description: "New site template for Plenco company. Created using Figma drafts.  ",
+        stack: "Stack: Gulp, Twig, HTML, JS, Scss",
         photos: [
             formation0, formation1, formation2, formation3, formation4, formation5, formation6, formation7, formation8, formation9, formation10 
         ]
@@ -66,7 +69,8 @@ const data = [
     {
         header: "Plenco",
         href: "https://demo.wiseup.dev/plenco/home.html",
-        deascription: "Created frontend templates for Plenco company based on Bootstrap 5 using provided design in AdobeXD. <br/>Stack: Gulp, Twig, Bootstrap 5, HTML, Tailwind, JS, Scss",
+        description: "Created frontend templates for Plenco company based on Bootstrap 5 using provided design in AdobeXD. ",
+        stack: "Stack: Gulp, Twig, Bootstrap 5, HTML, Tailwind, JS, Scss",
         photos: [
             plenco0, plenco1, plenco2, plenco3, plenco4, plenco5, plenco6, plenco7, plenco8, plenco9 
         ]

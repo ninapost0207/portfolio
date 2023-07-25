@@ -2,7 +2,7 @@
 @import '../../../assets/styles/base/mixins';
 
 .home-page {
-    background-color: $light-light-green;
+    
 
     &__content {
         margin: 200px auto;
@@ -21,19 +21,13 @@
         }
 
         & h1 {
-            color: $green;
-            font-size: 50px;
+            
             text-align: center;
-            @include respond-to(md) {        
-                font-size: 40px;
-            }
-            @include respond-to(sm) {        
-                font-size: 30px;
-            }
+            
             
         }
         & h3 {
-            color: grey;
+            color: $dark-dark;
             font-size: 25px;
             text-align: center;
             padding-top: 50px;

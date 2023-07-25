@@ -1,0 +1,81 @@
+@import '../../../assets/styles/base/variables';
+@import '../../../assets/styles/base/mixins';
+.modal {
+  transform: scale(1) translate(-50%, -50%);           
+  transition: transform 0.5s 0s ease-in-out;
+  
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  right: auto;
+  bottom: auto;
+  margin-right: -50%;    
+  width: 35%;
+  background-color: $main;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  padding: 40px;
+  min-height: 25%;
+  @include respond-to(md) {        
+      width: 50%;          
+  }
+  @include respond-to(sm) {        
+      width: 80%;          
+  }
+  & .opened {
+      transform: scale(1) translate(-50%, -50%);
+      transition: transform 0.5s 0s ease-in-out;
+    }
+    
+    .modal__button {
+        padding: 10px;
+        background: none;
+        box-shadow: none;
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        width: 50px;
+        height: 50px;
+        border-radius: 4px;
+
+        span {
+            margin: 0;
+            padding: 0;
+            border: 0;
+            background: none;
+            position: absolute;
+            width: 50px;
+            height: 50px;
+          
+            &:before,
+            &:after {
+              content: '';
+              position: absolute;
+              top: 0px;
+              left: -25px;
+              right: 25px;
+              height: 4px;
+              background: white;
+              border-radius: 4px;
+            }
+          
+            &:before {
+              transform: rotate(45deg);
+            }
+          
+            &:after {
+              transform: rotate(-45deg);
+            }
+        }
+    }
+    &__header {   
+        color: white;        
+        letter-spacing: 0.5px;
+        padding-bottom: 25px;
+        text-align: center;
+        padding-top: 50px;
+        
+    }
+
+}
+
