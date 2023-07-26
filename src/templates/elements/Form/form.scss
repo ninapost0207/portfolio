@@ -1,0 +1,72 @@
+@import '../../../assets/styles/base/variables';
+@import '../../../assets/styles/base/mixins';
+.form {
+    width: 45%;
+    
+    @include respond-to(lg) {        
+        width: 48%;
+    }
+    @include respond-to(md) {        
+        width: 70%;
+    }
+    @include respond-to(sm) {        
+        width: 100%;            
+    }
+    
+
+    
+    &__item {
+        padding-top: 37px;
+        @include respond-to(lg) {        
+            padding-top: 33px;
+        }
+    }
+
+    &__label {
+        font-size: 20px;
+    }
+    &__input {
+        height: 55px;
+        width: 100%;
+        border: 2px solid $dark;
+        background-color: transparent;
+        border-radius: 3px;
+        margin-top: 5px;
+        padding: 5px;
+        padding-left: 10px;
+        font-size: 30px;
+        @include respond-to(md) {        
+            height: 50px;
+        }
+        @include respond-to(sm) {        
+            height: 45px;           
+        }
+
+        &:focus {
+            box-shadow: 3px 3px 3px $light;
+            outline-offset: 0px;
+            outline: none;                
+        }
+    }
+    &__textarea {
+        height: 110px;
+        resize: vertical;
+        width: calc(100% - 1rem);
+        border: 2px solid $dark;
+        background-color: transparent;
+        border-radius: 3px;
+        margin-top: 5px;
+        padding: 5px;
+        padding-left: 10px;
+        font-size: 30px;
+        &:focus {
+            box-shadow: 3px 3px 3px $light;
+            outline-offset: 0px;
+            outline: none;                
+        }
+    }
+    &__button {            
+        margin-top: 30px;
+        
+    }
+}

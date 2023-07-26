@@ -24,106 +24,20 @@
             flex-direction: column !important;  
         }
     }
-    &__input-block {
-        width: 45%;
-        
-        @include respond-to(lg) {        
-            width: 48%;
-        }
-        @include respond-to(md) {        
-            width: 70%;
-        }
-        @include respond-to(sm) {        
-            width: 100%;            
-        }
-        
-        h4 {
-            color: $dark-dark;
-            font-size: 35px;
-            padding-top: 50px;
-            margin-top: -30px;
-
-            @include respond-to(sm) {        
-                font-size: 25px;
-            }
-            @include respond-to(xs) {        
-                font-size: 25px;
-                padding-top: 30px;
-            }
-        }
-        
-        &__item {
-            padding-top: 37px;
-            @include respond-to(lg) {        
-                padding-top: 33px;
-            }
-        }
     
-        &__label {
-            font-size: 20px;
-        }
-        &__input {
-            height: 55px;
-            width: 100%;
-            border: 2px solid $dark;
-            background-color: transparent;
-            border-radius: 3px;
-            margin-top: 5px;
-            padding: 5px;
-            padding-left: 10px;
-            font-size: 30px;
-            @include respond-to(md) {        
-                height: 50px;
-            }
-            @include respond-to(sm) {        
-                height: 45px;           
-            }
-
-            &:focus {
-                box-shadow: 3px 3px 3px $light;
-                outline-offset: 0px;
-                outline: none;                
-            }
-        }
-        &__textarea {
-            height: 110px;
-            resize: vertical;
-            width: calc(100% - 1rem);
-            border: 2px solid $dark;
-            background-color: transparent;
-            border-radius: 3px;
-            margin-top: 5px;
-            padding: 5px;
-            padding-left: 10px;
-            font-size: 30px;
-            &:focus {
-                box-shadow: 3px 3px 3px $light;
-                outline-offset: 0px;
-                outline: none;                
-            }
-        }
-        &__button {            
-            margin-top: 30px;
-            padding-left: 55px;
-            padding-right: 55px;  
-            @include respond-to(sm) {        
-                width: 100%;           
-            }
-        }
-    }
+    
 
     &__contacts-block {
         width: 45%;
-        margin-top: 15px;
-        @include respond-to(xl) {   
-            margin-top: 12px;
-        }
+        margin-top: -62px;
+        
         @include respond-to(lg) {        
             width: 49%; 
-            margin-top: 8px;           
+            margin-top: -72px;        
         }
         @include respond-to(md) {        
             width: 70%;
+            margin-top: 30px;
         }
         @include respond-to(sm) {        
             width: 100%;            
@@ -132,21 +46,33 @@
         &__item {
             background-color: $light;
             width: 100%;
-            height: 135px;
-            margin-top: 35px;
+            height: 142px;
+            margin-top: 33px;
             border-radius: 3px;
-            @include respond-to(xl) { 
-                margin-top: 37px;
-            }
+            padding: 25px;
+            
             @include respond-to(lg) {        
-                height: 125px; 
-                margin-top: 42px;
+                height: 135px; 
+                margin-top: 37px;
+                padding: 20px;
+            }
+            @include respond-to(md) {        
+                padding: 25px;            
+            }
+            @include respond-to(xs) {        
+                padding: 12px;           
             }
 
             & div {
-                margin-left: 35px;
+                margin-left: 25px;
+                @include respond-to(xl) { 
+                    margin-left: 20px;
+                }
                 @include respond-to(lg) {        
                     margin-left: 20px;            
+                }
+                @include respond-to(md) {        
+                    margin-left: 25px;            
                 }
                 @include respond-to(xs) {        
                     margin-left: 10px;            
@@ -173,10 +99,9 @@
         }
         &__icon {
             width: 70px;
-            height: 70px;            
-            margin-left: 25px;
-            opacity: 0.6;
-            border: 5px solid $dark;
+            height: 70px;  
+            filter: invert(54%) sepia(3%) saturate(2623%) hue-rotate(149deg) brightness(94%) contrast(76%);
+            border: 5px solid black;
             border-radius: 3px;
             padding: 7px;
             

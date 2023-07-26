@@ -16,12 +16,9 @@ import irkswim6 from "../../assets/images/irkswim/irkswim_contacts_dark.jpg";
 import irkswim7 from "../../assets/images/irkswim/irkswim_footer.jpg";
 
 import formation0 from "../../assets/images/formation/formation.jpg";
-import formation1 from "../../assets/images/formation/formation_1.jpg";
 import formation2 from "../../assets/images/formation/formation_2.jpg";
 import formation3 from "../../assets/images/formation/formation_3.jpg";
 import formation4 from "../../assets/images/formation/formation_4.jpg";
-import formation5 from "../../assets/images/formation/formation_5.jpg";
-import formation6 from "../../assets/images/formation/formation_6.jpg";
 import formation7 from "../../assets/images/formation/formation_7.jpg";
 import formation8 from "../../assets/images/formation/formation_8.jpg";
 import formation9 from "../../assets/images/formation/formation_9.jpg";
@@ -35,8 +32,7 @@ import plenco4 from "../../assets/images/plenco/plenco_4.jpg";
 import plenco5 from "../../assets/images/plenco/plenco_5.jpg";
 import plenco6 from "../../assets/images/plenco/plenco_6.jpg";
 import plenco7 from "../../assets/images/plenco/plenco_7.jpg";
-import plenco8 from "../../assets/images/plenco/plenco_8.jpg";
-import plenco9 from "../../assets/images/plenco/plenco_9.jpg";
+
 
 const data = [
     {
@@ -51,7 +47,7 @@ const data = [
     {
         header: "Irkutsk Swimming",
         href: "https://www.irkswimming.ru/",
-        description: "New site template. ",
+        description: "Created the entire frontend part",
         stack: "Stack: Gulp, Twig, HTML, JS, Scss",
         photos: [
             irkswim1, irkswim2, irkswim3, irkswim4, irkswim5, irkswim6, irkswim7 
@@ -60,10 +56,10 @@ const data = [
     {
         header: "Formation",
         href: "https://www.formation.ai/",
-        description: "New site template for Plenco company. Created using Figma drafts.  ",
+        description: "New site template for Formation company. Created using Figma drafts.  ",
         stack: "Stack: Gulp, Twig, HTML, JS, Scss",
         photos: [
-            formation0, formation1, formation2, formation3, formation4, formation5, formation6, formation7, formation8, formation9, formation10 
+            formation0, formation2, formation3, formation4, formation7, formation8, formation9, formation10 
         ]
     },
     {
@@ -72,7 +68,7 @@ const data = [
         description: "Created frontend templates for Plenco company based on Bootstrap 5 using provided design in AdobeXD. ",
         stack: "Stack: Gulp, Twig, Bootstrap 5, HTML, Tailwind, JS, Scss",
         photos: [
-            plenco0, plenco1, plenco2, plenco3, plenco4, plenco5, plenco6, plenco7, plenco8, plenco9 
+            plenco0, plenco1, plenco2, plenco3, plenco4, plenco5, plenco6, plenco7
         ]
     },
 ]

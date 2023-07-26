@@ -21,6 +21,7 @@
       left: 25%;
       top: 50%;
       z-index: 2;
+	  padding: 0;
       @include respond-to(lg) {        
         width: 43px;
       }
@@ -38,7 +39,7 @@
         border-top-left-radius: 0px;
         border-bottom-left-radius: 0px;
       }      
-
+	  	
       &:hover .arrow_up{
         color: $dark-dark;
         transform: rotate(-45deg) translateY(-10px) translateX(10px);
@@ -105,12 +106,37 @@
   		    background-color: $light;
 		
   		    a {
+				display: flex;
+				flex-direction: column;
+				justify-content: center;
+				align-items: center;
+				padding-left: 30px;
+				padding-right: 60px;
+				@include respond-to(xl) {        
+					padding-left: 20px;
+				}
   		      h1 {
-  		        
-  		        padding-left: 50px;
-  		        padding-right: 50px;
+  		        text-align: center;
+				font-size: 45px;
+				@include respond-to(xl) {        
+					font-size: 40px;
+				}
+				@include respond-to(lg) {        
+					font-size: 35px;					
+				}				
   		      }
+			  img {
+				width: 50px;
+				height: 50px;	
+				filter: invert(19%) sepia(25%) saturate(424%) hue-rotate(189deg) brightness(96%) contrast(91%);	
+				margin-top: 20px;
+				transition: transform .3s;	
+				&:hover {
+					transform: scale(1.1);            
+				}	
+			  }
   		    }
+
 		
   		}
 	}
@@ -135,55 +161,46 @@
 	  	}
 
   		&__item {    
-  		  height: 100%;
-  		  width: 100%;
-  		  padding-top: 57px;   
-  		  display: flex;
-  		  flex-direction: column;
-  		  justify-content: center;
-  		  align-items: center;
-  		  background-color: $main;
-		
-  		  @include respond-to(md) {
-  		    border-bottom: 4px solid $light;
-  		    padding-top: 0px;      
-  		  }
-  		  @include respond-to(sm) {      
-  		    padding-top: 0px;
-  		    height: 80%;
-  		  }
-  		  a {
-  		    h1 {
-  		      display: none;
-  		      @include respond-to(md) {
-  		        display: block;
-  		        color: $dark-dark;
-  		        padding-bottom: 50px;
-  		      }
-  		    }
-  		  }
-  		  h5 {
-  		    color: $dark-dark;
-  		    font-size: 25px;
-  		    line-height: 25px;
-  		    padding-top: 10px;
-  		    text-align: center;
-  		    padding-left: 50px;
-  		    padding-right: 50px;
-			letter-spacing: 1px;
-  		  }
+			height: 100%;
+			width: 100%;
+			padding-top: 57px;   
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+			align-items: center;
+			background-color: $main;
+			
+			@include respond-to(md) {
+				border-bottom: 4px solid $dark;
+				padding-top: 0px;      
+			}
+			@include respond-to(sm) {      
+				padding-top: 0px;
+				height: 80%;
+			}
+			
+			h5 {
+				color: $dark-dark;  		    
+				text-align: center;
+			}
+			
   		}
   		&__image-container {
   		  width: 80%;
   		  height: 530px;
   		  margin-top: 50px;
-  		  border: 4px solid $dark;
+  		  border: none;
   		  background-color: transparent;
   		  border-radius: 5px;
-		
+			@include respond-to(md) {
+				height: 350px;				
+			}
   		 	@include respond-to(sm) {
-  		 	  height: 260px;
+  		 	  	height: 280px;
   		 	}
+			@include respond-to(xs) {
+				height: 180px;
+			}
 	  
   		 	img {
   		 	  width: 100%;

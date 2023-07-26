@@ -1,9 +1,8 @@
 @import '../../../assets/styles/base/variables';
 @import '../../../assets/styles/base/mixins';
 .modal {
-  transform: scale(1) translate(-50%, -50%);           
-  transition: transform 0.5s 0s ease-in-out;
-  
+  transform: translate(-50%, -50%);           
+  transition: transform 0.5s 0s ease-in-out;  
   position: absolute;
   top: 50%;
   left: 50%;
@@ -11,8 +10,8 @@
   bottom: auto;
   margin-right: -50%;    
   width: 35%;
-  background-color: $main;
-  border: 1px solid #ddd;
+  background-color: $light-light;
+  border: 2px solid $dark-dark;
   border-radius: 5px;
   padding: 40px;
   min-height: 25%;
@@ -22,12 +21,9 @@
   @include respond-to(sm) {        
       width: 80%;          
   }
-  & .opened {
-      transform: scale(1) translate(-50%, -50%);
-      transition: transform 0.5s 0s ease-in-out;
-    }
+  
     
-    .modal__button {
+    &__button {
         padding: 10px;
         background: none;
         box-shadow: none;
@@ -55,7 +51,7 @@
               left: -25px;
               right: 25px;
               height: 4px;
-              background: white;
+              background: $dark-dark;
               border-radius: 4px;
             }
           
@@ -69,7 +65,7 @@
         }
     }
     &__header {   
-        color: white;        
+        color: $dark-dark;       
         letter-spacing: 0.5px;
         padding-bottom: 25px;
         text-align: center;

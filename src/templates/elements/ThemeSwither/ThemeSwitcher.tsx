@@ -1,17 +1,12 @@
 import './theme-switcher.scss';
 
-export default function ThemeSwitcher () {
-    const changeTheme =  () => {
-        document.body.classList.contains('dark') ? 
-            document.body.classList.remove('dark') :
-            document.body.classList.add('dark')
-        
-        
-    }
-
+export default function ThemeSwitcher ({toggleTheme}: {toggleTheme: () => void}) {
+    
+    
     return(
     <div className="theme-switch">
-        <input type="checkbox" id="themeSwitch" name="theme-switch" className="theme-switch__input" onClick={changeTheme}/>
+        <input type="checkbox" id="themeSwitch" name="theme-switch" className="theme-switch__input" onClick={toggleTheme} 
+        checked={document.body.classList.contains('dark') ? true : false}/>
         <label htmlFor="themeSwitch" className="theme-switch__label">
 		    <span></span>
 	    </label>

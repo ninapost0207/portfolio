@@ -3,31 +3,33 @@
 
 .theme-switch {
 	
-    &__input {
-        position: fixed;
+	&__input {
+		position: fixed;
         z-index: 15;
         opacity: 0;
-
+		
 		&:checked ~ .theme-switch__label {
 			background-color: $dark-dark;
-		
+			
 			&::before {
 				color: white;
 			}
-
+			
 			&::after {
-				color: rgb(148, 236, 245);
+				color: $light-light;
 			}
-
+			
 			span::after {
 				transform: translate3d(35px, 0, 0);
 			}
 		}
         
     }
-
-
-    &__label {
+	
+	
+    &__label {	
+		cursor: pointer;	
+		border: 2px solid $dark;
         position: fixed;
 		right: 0;
         z-index: 15;		
@@ -43,38 +45,41 @@
 		
 		@include respond-to(md) { 
             left: 0;
-			margin-left: 50px;
+			margin-left: 30px;
 			margin-top: 18px;
 			
         }
 		
 		
 		&::before,
-		&::after {
-			font-size: 2rem;
-			position: absolute;
-			transform: translate3d(0, -53%, 0);
+		&::after {			
+			position: absolute;			
 			top: 50%;
 		}
 		
 		&::before {
+			font-size: 1.5rem;
 			content: '\263C';
 			right: 100%;		
 			color: $dark-dark;
 			margin-right: 5px;
+			transform: translate3d(34px, -53%, 0);
 		}
 		
 		&::after {
+			font-size: 1.7rem;
 			content: '\263E';
 			left: 100%;
 			margin-left: 5px;
 			color: $dark-dark;
+			transform: translate3d(-33px, -53%, 0);
 		}
 		span {
 			position: absolute;
 			bottom: calc(100% + 10px);
 			left: 0;
 			width: 100%;
+			
 
 			&::after {
 			position: absolute;

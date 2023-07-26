@@ -5,7 +5,7 @@
     
 
     &__content {
-        margin: 200px auto;
+        margin: 190px auto;
         width: 80%;
         @include respond-to(lg) {        
             margin: 150px auto;
@@ -71,8 +71,9 @@
     &__icon {
         width: 100px;
         height: 100px;
-        transition: 0.3s;
-        opacity: 0.7;
+        transition: transform .3s;
+        filter: invert(19%) sepia(25%) saturate(424%) hue-rotate(189deg) brightness(96%) contrast(91%);
+        
         @include respond-to(sm) {        
             width: 70px;
             height: 70px;
@@ -82,16 +83,7 @@
             height: 50px;
         }
         &:hover {
-            width: 105px;
-            height: 105px;
-            @include respond-to(sm) {        
-                width: 75px;
-                height: 75px;
-            }
-            @include respond-to(xs) {        
-                width: 55px;
-                height: 55px;
-            }
+            transform: scale(1.1);            
         }
     }
 }
@@ -113,21 +105,6 @@
         margin-left: -5px;
     }
     &:hover {
-        width: 125px;
-        height: 125px;
-        margin-top: -12.5px;
-        margin-left: -12.5px;
-        @include respond-to(sm) {        
-            width: 85px;
-            height: 85px;
-            margin-top: -7px;
-            margin-left: -7px;
-        }
-        @include respond-to(xs) {        
-            width: 65px;
-            height: 65px;
-            margin-top: -7px;
-            margin-left: -7px;
-        }
+        transform: scale(1.1);
     }
 }

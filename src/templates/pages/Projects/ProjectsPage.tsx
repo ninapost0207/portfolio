@@ -2,6 +2,7 @@ import { useMemo, useState } from "react";
 import Gallery from "../../elements/Gallery/Gallery";
 import  portfolio from '../../../assets/data/portfolio'
 import './projects.scss';
+import link from '../../../assets/icons/link.svg';
 
 export default function Projects () {
     const [activeSlide, setActiveSlide] = useState<number>(0)
@@ -27,7 +28,8 @@ export default function Projects () {
             return (
                 <div className="sidebar__item" key={project.header}>                      
                     <a href={project.href}>
-                        <h1>{project.header}</h1>                        
+                        <h1>{project.header}</h1>  
+                        <img src={link} alt="To the Website" />                      
                     </a>                    
                 </div>
             )
@@ -42,8 +44,9 @@ export default function Projects () {
                     <h5>{project.description}</h5>
                     <h5>{project.stack}</h5>
                     <div className="main-slide__image-container">
-                        <Gallery images={project.photos} />
+                        <Gallery images={project.photos} url={project.href} />
                     </div>
+                    
                 </div>
             )
         })}          
@@ -56,10 +59,10 @@ export default function Projects () {
             {rightSlide}
             <div className="controls">
                 <button className="button_down projects-page__button" onClick={() => onSlideClick(activeSlide-1)}>
-                    <i className="arrow arrow_down"></i>
+                    <div className="arrow arrow_down"></div>
                 </button>
                 <button className="button_up  projects-page__button" onClick={() => onSlideClick(activeSlide+1)}>
-                    <i className=" arrow arrow_up"></i>
+                    <div className=" arrow arrow_up"></div>
                 </button>
             </div>
         </div>

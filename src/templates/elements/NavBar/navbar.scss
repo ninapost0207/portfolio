@@ -104,12 +104,10 @@ nav {
                 a {
                     pointer-events: none;
                     text-decoration: none;
-                    font-size: 25px;
-                    
+                    font-size: 25px;                    
                     color: $dark;
                     font-weight: bold;                    
-                    width: 100%;
-                    
+                    width: 100%;                    
                     
                     @include respond-to(md) {
                         pointer-events: initial;        
@@ -120,7 +118,7 @@ nav {
                     }
                     &.active {                        
                         color: $dark-dark;
-                        text-decoration: underline;                        
+                        text-decoration: underline;
                     }
                 }
             }
@@ -160,8 +158,7 @@ nav {
                     }
                     
                     &.active {
-                        background: $main;
-                        color: $dark;
+                        background: $main;                        
                     }
                 }
             }

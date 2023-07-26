@@ -14,10 +14,7 @@
             margin: 30px auto;                  
         }
 
-        & h1 {       
-            padding-top: 30px;           
-            
-        }
+        
     }
     &__skills {
         margin-bottom: 50px;
@@ -40,6 +37,7 @@
                 h5 {
                     color: $dark-dark;
                     font-size: 20px;
+                    padding-left: 0;
     
                     @include respond-to(sm) {        
                         font-size: 18px;

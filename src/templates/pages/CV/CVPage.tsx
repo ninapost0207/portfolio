@@ -1,5 +1,6 @@
 import './cv.scss';
 import skills from '../../../assets/data/skills';
+import resume from '../../../assets/documents/Nina_Postnikova_Resume.pdf';
 
 
 export default function CV () {
@@ -39,8 +40,8 @@ export default function CV () {
                         })}  
                     </div>
                 </div>  
-                <h1>Resume</h1>  
-                <a href="../../assets/documents/Nina_Postnikova_Resume.pdf" download="cv">
+                <h2>Resume</h2>  
+                <a href={resume} download="Resume" target='_blank' rel="noreferrer">
                     <button className="cv-page__button">DOWNLOAD CV</button>
                 </a>        
 

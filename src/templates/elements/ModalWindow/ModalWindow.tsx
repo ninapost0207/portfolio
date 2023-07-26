@@ -16,7 +16,7 @@ export default function ModalWindow () {
       <Modal
           isOpen={modalIsOpen}            
           onRequestClose={closeModal}  
-          className={`modal ${modalIsOpen ? 'opened' : ''}`}
+          className='modal'
           
       >
           <button className="modal__button" onClick={closeModal}>
