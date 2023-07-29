@@ -7,13 +7,13 @@ import repair6 from "../../assets/images/repair/repair_6.jpg";
 import repair7 from "../../assets/images/repair/repair_7.jpg";
 import repair8 from "../../assets/images/repair/repair_8.jpg";
 
-import irkswim1 from "../../assets/images/irkswim/irkswim_home_dark.jpg";
-import irkswim2 from "../../assets/images/irkswim/irkswim_about1.jpg";
-import irkswim3 from "../../assets/images/irkswim/irkswim_price.jpg";
-import irkswim4 from "../../assets/images/irkswim/irkswim_downloads_dark1.jpg";
-import irkswim5 from "../../assets/images/irkswim/irkswim_contacts.jpg";
-import irkswim6 from "../../assets/images/irkswim/irkswim_contacts_dark.jpg";
-import irkswim7 from "../../assets/images/irkswim/irkswim_footer.jpg";
+import irkswim1 from "../../assets/images/irkswim/1.jpg";
+import irkswim2 from "../../assets/images/irkswim/2.jpg";
+import irkswim3 from "../../assets/images/irkswim/3.jpg";
+import irkswim4 from "../../assets/images/irkswim/4.jpg";
+import irkswim5 from "../../assets/images/irkswim/5.jpg";
+import irkswim6 from "../../assets/images/irkswim/6.jpg";
+
 
 import formation0 from "../../assets/images/formation/formation.jpg";
 import formation2 from "../../assets/images/formation/formation_2.jpg";
@@ -50,7 +50,7 @@ const data = [
         description: "Created the entire frontend part",
         stack: "Stack: Gulp, Twig, HTML, JS, Scss",
         photos: [
-            irkswim1, irkswim2, irkswim3, irkswim4, irkswim5, irkswim6, irkswim7 
+            irkswim1, irkswim2, irkswim3, irkswim4, irkswim5, irkswim6
         ]
     },
     {

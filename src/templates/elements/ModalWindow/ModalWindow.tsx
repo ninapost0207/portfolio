@@ -6,7 +6,7 @@ Modal.setAppElement('#root');
 
 export default function ModalWindow () {
     const [modalIsOpen, setIsOpen] = useState<boolean>(true);
-
+    
       
   
     function closeModal() {      
@@ -16,7 +16,7 @@ export default function ModalWindow () {
       <Modal
           isOpen={modalIsOpen}            
           onRequestClose={closeModal}  
-          className='modal'
+          className='modal opened'
           
       >
           <button className="modal__button" onClick={closeModal}>

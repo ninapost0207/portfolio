@@ -22,7 +22,7 @@ export default function CV () {
                                         </div>
                                     </div>  
                                 ) 
-                            }                            
+                            } else return null                       
                         })}  
                     </div>
                     <div className='cv-page__skills-block'>            
@@ -36,7 +36,7 @@ export default function CV () {
                                         </div>
                                     </div>  
                                 ) 
-                            }                            
+                            }  else return null                         
                         })}  
                     </div>
                 </div>  

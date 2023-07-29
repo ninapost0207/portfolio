@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import NavBar from './templates/elements/NavBar/NavBar';
 import Contact from './templates/pages/Contact/Contact';
@@ -7,7 +7,7 @@ import Home from "./templates/pages/Home/HomePage";
 import CV from "./templates/pages/CV/CVPage";
 import ThemeSwitcher from "./templates/elements/ThemeSwither/ThemeSwitcher";
 
-function App() {  
+const App: React.FC = () => {  
     const [theme, setTheme] = useState(() => {
         const initialTheme = localStorage.getItem("theme");
         return initialTheme ? initialTheme : 'light';
@@ -35,16 +35,16 @@ function App() {
         document.body.classList.remove('dark')
     }
   return (
-    <BrowserRouter>  
+    
+    <BrowserRouter>
         <ThemeSwitcher toggleTheme={toggleTheme}/>    
-        <NavBar />          
-        <Routes>
-            <Route path="/" element={ <Home />} />
-            <Route path="/contact" element={ <Contact />} />
-            <Route path="/projects" element={ <Projects />} />
-            <Route path="/cv" element={ <CV />} />
-        </Routes>         
-              
+        <NavBar /> 
+            <Routes>
+                <Route path="/" element={<Home />} />
+                <Route path="/contact" element={<Contact/>} />
+                <Route path="/projects" element={<Projects/>} />
+                <Route path="/cv" element={<CV/>} />
+            </Routes>
     </BrowserRouter>
   );
 }

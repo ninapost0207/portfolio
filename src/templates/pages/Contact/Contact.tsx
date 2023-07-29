@@ -9,13 +9,15 @@ import ModalWindow from '../../elements/ModalWindow/ModalWindow';
 
 
 
-export default function Contact () {  
-    
+export default function Contact () {      
   const [modalIsOpen, setIsOpen] = useState<boolean>(false);  
+  
 
     function openModal() {      
       setIsOpen(true);
+      document.body.style.animation = 'fade-and-scale-out 0.5s ease-in-out 1 forwards;'
       setTimeout(() => setIsOpen(false), 2000)
+      document.body.style.animation = 'fade-and-scale-in 10s ease-in-out 1 forwards;'
     }     
 
     
