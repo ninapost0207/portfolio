@@ -5,6 +5,7 @@ html, body, h1, h2, h3, h4, h5, h6, p, span, button, input, form, header, footer
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    scroll-behavior: smooth;
 }
 
 body {
@@ -13,6 +14,7 @@ body {
     margin: 0 auto;    
     overflow: auto;
     background-color: $main;
+    
 
     &.dark {
         background-color: $dark-dark;
@@ -92,7 +94,19 @@ body {
                         color: $beige;
                     }
                 }
-                
+                &__scroll-button {                     
+                    background-color: $dark;
+                    
+                    &:hover {
+                        background-color: $dark; 				
+                    }
+                    &:hover .scroll_up{
+                        color: $light-light;                        
+                      }
+                    .scroll_up {                        
+                        color: $light;                        
+                    }
+                }
             }
             &__button {                
                 &:hover .arrow_up{

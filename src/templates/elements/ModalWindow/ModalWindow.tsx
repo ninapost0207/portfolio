@@ -14,7 +14,8 @@ export default function ModalWindow () {
     }
      return (
       <Modal
-          isOpen={modalIsOpen}            
+          isOpen={modalIsOpen} 
+          closeTimeoutMS={2000}           
           onRequestClose={closeModal}  
           className='modal opened'
           

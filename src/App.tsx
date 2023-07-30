@@ -39,7 +39,7 @@ const App: React.FC = () => {
     <BrowserRouter>
         <ThemeSwitcher toggleTheme={toggleTheme}/>    
         <NavBar /> 
-            <Routes>
+            <Routes >
                 <Route path="/" element={<Home />} />
                 <Route path="/contact" element={<Contact/>} />
                 <Route path="/projects" element={<Projects/>} />

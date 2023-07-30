@@ -4,12 +4,12 @@ import link from '../../../assets/icons/link.svg';
 
 interface IGallery {
     images: string[],
-    url: string
+    href: string
 }
 
 
 
-const Gallery: React.FC<IGallery> = ({images=[]}, {url=''}): JSX.Element => {
+const Gallery: React.FC<IGallery> = ({images=[], href=''}): JSX.Element => {
     const [selectedImage, setSelectedImage] = useState<number>(1)
 
     const onNavClick = (newIndex: number) => {
@@ -44,7 +44,7 @@ const Gallery: React.FC<IGallery> = ({images=[]}, {url=''}): JSX.Element => {
                     <div className="arrow_right arrow" ></div>
                 </button>                                   
             </div>
-            <a href={url}>
+            <a href={href} target="_blank" rel="noreferrer">
                 <img className="gallery__icon" src={link} alt="To the Website" /> 
             </a>
         </div> 

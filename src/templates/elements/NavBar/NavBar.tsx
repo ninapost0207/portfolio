@@ -8,8 +8,6 @@ export default function NavBar () {
     
     return (
     <nav>
-        
-
         <div className="mobile">
 		    <button  className={`mobile__button ${opened ? "open" : ""}`} aria-label="mobile menu" onClick={() => setOpened(!opened)}>
 		    	<span></span>
@@ -22,7 +20,8 @@ export default function NavBar () {
                         <li key={navItem.name}>
                             <NavLink
                                 to={navItem.url}
-                                className={({ isActive }) => isActive ? 'active' : ''  }>
+                                className={({ isActive }) => isActive ? 'active' : ''  }
+                                onClick={() => setOpened(false)}>
                                 {navItem.name}
                             </NavLink>                        
                         </li>

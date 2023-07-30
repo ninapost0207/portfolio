@@ -2,7 +2,6 @@
 @import '../../../assets/styles/base/mixins';
 .modal {
   transform:  translate(-50%, -50%);
-  transition: transform 0.5s 0s ease-in-out;  
   position: absolute;
   top: 50%;
   left: 50%;
@@ -72,23 +71,19 @@
         padding-top: 50px;        
     }
 }
-@keyframes fade-and-scale-in {
-  from {
-    opacity: 0;
-    transform: scale(0);
-  }
-  to {
-    opacity: 1;
-    transform: scale(1);
-  }
+
+.ReactModal__Overlay {
+  opacity: 0;
+  transform: translateX(-100px);
+  transition: all 500ms ease-in-out;
 }
-@keyframes fade-and-scale-out {
-  from {
-    opacity: 1;
-    transform: scale(1);
-  }
-  to {
-    opacity: 0;
-    transform: scale(0);
-  }
+
+.ReactModal__Overlay--after-open {
+  opacity: 1;
+  transform: translateX(0px);
+}
+
+.ReactModal__Overlay--before-close {
+  opacity: 0;
+  transform: translateX(-100px);
 }

@@ -1,8 +1,8 @@
-import  { useRef } from 'react';
+import  { useRef, useState } from 'react';
 import './form.scss';
 
 
-export default function Form ({openModal}: {openModal: () => void}) {
+export default function Form ({openModal}: {openModal: () => void}) {    
     const _name = useRef<HTMLInputElement>(null)
     const _phone = useRef<HTMLInputElement>(null)
     const _email = useRef<HTMLInputElement>(null)
@@ -60,7 +60,9 @@ export default function Form ({openModal}: {openModal: () => void}) {
                 <label htmlFor="message" className="form__label">Your Message:</label>                       
                 <textarea ref={_message} className="form__textarea" name="message" ></textarea>   
             </div>
-            <button type="submit" className="form__button button">SEND MESSAGE</button>                        
+            <button type="submit" className="form__button button">
+                SEND MESSAGE
+            </button>                        
         </form>
     )
 }
