@@ -327,15 +327,12 @@ button {
     cursor: pointer;  
     border: 2px solid $dark;
     text-transform: uppercase;
-    padding-top: 15px;
-    padding-bottom: 15px;
+    padding: 15px 55px;    
     font-size: 25px !important;
     letter-spacing: 1px;
     font-weight: 600;
     border-radius: 5px;
-    font-family: 'Mulish-600';
-    padding-left: 55px;
-    padding-right: 55px;  
+    font-family: 'Mulish-600';     
         
     @include respond-to(md) {        
         font-size: 20px !important;           

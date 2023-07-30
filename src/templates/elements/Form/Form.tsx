@@ -2,7 +2,8 @@ import  { useRef, useState } from 'react';
 import './form.scss';
 
 
-export default function Form ({openModal}: {openModal: () => void}) {    
+export default function Form ({openModal}: {openModal: () => void}) {  
+    const [loading, setLoading] = useState<boolean>(false);  
     const _name = useRef<HTMLInputElement>(null)
     const _phone = useRef<HTMLInputElement>(null)
     const _email = useRef<HTMLInputElement>(null)
@@ -13,8 +14,9 @@ export default function Form ({openModal}: {openModal: () => void}) {
         if (!_name.current || !_email.current || !_phone.current || !_message.current) return
         
         sendMessage(`${_name.current.value} with phone number: ${_phone.current.value} and email: ${_email.current.value} has sent you a message: ${_message.current.value}`);      
+        setLoading(true);
+        setTimeout(() => {setLoading(false); openModal()}, 1500)
         
-        openModal()
       }
       
              
@@ -60,9 +62,13 @@ export default function Form ({openModal}: {openModal: () => void}) {
                 <label htmlFor="message" className="form__label">Your Message:</label>                       
                 <textarea ref={_message} className="form__textarea" name="message" ></textarea>   
             </div>
-            <button type="submit" className="form__button button">
-                SEND MESSAGE
-            </button>                        
+            {loading ? 
+                    (<div className="loader-container">
+                        <div className="spinner"></div>
+                    </div>) :
+                    (<button type="submit" className="form__button button">SEND MESSAGE</button>)
+            }
+                                    
         </form>
     )
 }

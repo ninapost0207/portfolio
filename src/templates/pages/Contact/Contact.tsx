@@ -24,7 +24,7 @@ export default function Contact () {
         >
 
             <div className='contact-page container'>    
-                {modalIsOpen ? <ModalWindow /> : null}            
+                {modalIsOpen ? <ModalWindow  /> : null}            
                 <h1 >Contact me</h1> 
                 <div className=' flex flex-row justify-between align-center contact-page_row'>
                     <Form openModal={() =>setIsOpen(true)}/>
