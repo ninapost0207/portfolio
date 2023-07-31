@@ -1,4 +1,4 @@
-import {useState} from 'react';
+import { useState } from 'react';
 import Modal from 'react-modal';
 import './gallery.scss';
 import link from '../../../assets/icons/link.svg';
@@ -10,14 +10,14 @@ interface IGallery {
 
 
 
-const Gallery: React.FC<IGallery> = ({images=[], href=''}): JSX.Element => {
+const Gallery: React.FC<IGallery> = ({ images = [], href = '' }): JSX.Element => {
     const [selectedImage, setSelectedImage] = useState<number>(1);
     const [modalIsOpen, setIsOpen] = useState<boolean>(false);
 
-    function closeModal() {      
+    function closeModal() {
         setIsOpen(false);
     }
-    function openModal() {      
+    function openModal() {
         setIsOpen(true);
     }
 
@@ -30,7 +30,7 @@ const Gallery: React.FC<IGallery> = ({images=[], href=''}): JSX.Element => {
         }
         setSelectedImage(newIndex)
     }
-    
+
 
     const pagination = images.map((image, index) => {
         return (
@@ -39,36 +39,36 @@ const Gallery: React.FC<IGallery> = ({images=[], href=''}): JSX.Element => {
             </button>
         )
     })
-    
+
 
     return (
-        <div className="gallery">                                 
-            <img className="gallery__img" src={images[selectedImage]} alt={`${selectedImage + 1}`} onClick={openModal} title="Increase photo"/>
+        <div className="gallery">
+            <img className="gallery__img" src={images[selectedImage]} alt={`${selectedImage + 1}`} onClick={openModal} title="Increase photo" />
 
-            <div className="gallery__control-block"> 
+            <div className="gallery__control-block">
                 <button className="gallery__button" onClick={() => onNavClick(selectedImage - 1)} name="To the left" aria-label={`${selectedImage - 1}`}>
                     <div className="arrow_left arrow"></div>
                 </button>
-                    {pagination}
+                {pagination}
                 <button className="gallery__button" onClick={() => onNavClick(selectedImage + 1)} name="To the right" aria-label={`${selectedImage + 1}`}>
                     <div className="arrow_right arrow" ></div>
-                </button>                                   
+                </button>
             </div>
-            <a href={href} target="_blank" rel="noreferrer">
-                <img className="gallery__icon" src={link} alt="To the Website" /> 
+            <a href={href} target="_blank" rel="noreferrer" area-label="To the Website">
+                <img className="gallery__icon" src={link} alt="To the Website" />
             </a>
             <Modal
-                isOpen={modalIsOpen} 
-                closeTimeoutMS={2000}           
-                onRequestClose={closeModal}  
-                className='modal_photo' 
+                isOpen={modalIsOpen}
+                closeTimeoutMS={2000}
+                onRequestClose={closeModal}
+                className='modal_photo'
             >
-                <button className="modal__button" onClick={closeModal}>
+                <button className="modal__button" onClick={closeModal} area-label="Close Modal Window">
                     <span className="cross"></span>
-                </button>  
-                <img  src={images[selectedImage]} alt={`${selectedImage + 1}`} onClick={closeModal} />              
+                </button>
+                <img src={images[selectedImage]} alt={`${selectedImage + 1}`} onClick={closeModal} />
             </Modal>
-        </div> 
+        </div>
     );
 }
 
