@@ -20,6 +20,10 @@
       top: 50%;
       z-index: 2;
 	  padding: 0;
+	  &:focus {        
+        outline-offset: 0px;
+        outline: none;                
+    }
       @include respond-to(lg) {        
         width: 43px;
       }
@@ -176,9 +180,24 @@
 				padding-top: 0px;				
 			}
 			
-			h5 {
+			h2 {
 				color: $dark-dark;  		    
 				text-align: center;
+				font-size: 25px;  
+				padding-left: 50px;
+				padding-right: 50px;
+				letter-spacing: 1px;
+				@include respond-to(lg) {        
+					font-size: 20px;
+				}
+				@include respond-to(md) {        
+					font-size: 18px;
+					letter-spacing: normal;        
+				}
+				@include respond-to(xs) {        
+					padding-left: 30px;  
+					padding-right: 30px;      
+				}
 			}
 			
   		}

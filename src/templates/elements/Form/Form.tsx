@@ -45,28 +45,24 @@ export default function Form ({openModal}: {openModal: () => void}) {
       }
   
     return (
-        <form id="form-submit" className='form' onSubmit={onSubmitHandler} >            
-            <div className="form__item">
-                <label htmlFor="name" className="form__label" >Your Name:</label>
-                <input ref={_name} className="form__input" name="name" type="text" ></input>                                    
-            </div>
-            <div className="form__item">
-                <label htmlFor="phone" className="form__label">Your Phone:</label>
-                <input ref={_phone} className="form__input" name="phone" type="phone" ></input>                                    
-            </div>
-            <div className="form__item">
-                <label htmlFor="email" className="form__label">Your Email:</label>
-                <input ref={_email} className="form__input"  name="email"  type="email"  ></input>                                    
-            </div>
-            <div className="form__item">
-                <label htmlFor="message" className="form__label">Your Message:</label>                       
-                <textarea ref={_message} className="form__textarea" name="message" ></textarea>   
-            </div>
+        <form id="form-submit" className='form' onSubmit={onSubmitHandler} > 
+            <label htmlFor="name" className="form__label" >Your Name:</label>
+            <input ref={_name} className="form__input" name="name" type="text" id='name' ></input>
+
+            <label htmlFor="phone" className="form__label">Your Phone:</label>
+            <input ref={_phone} className="form__input" name="phone" type="phone" id='phone'></input>  
+        
+            <label htmlFor="email" className="form__label">Your Email:</label>
+            <input ref={_email} className="form__input"  name="email"  type="email" id='email' ></input>
+        
+            <label htmlFor="message" className="form__label">Your Message:</label>                       
+            <textarea ref={_message} className="form__textarea" name="message" id='message'></textarea>   
+        
             {loading ? 
-                    (<div className="loader-container">
-                        <div className="spinner"></div>
-                    </div>) :
-                    (<button type="submit" className="form__button button">SEND MESSAGE</button>)
+                (<div className="loader-container">
+                    <div className="spinner"></div>
+                </div>) :
+                (<button type="submit" className="form__button button" area-label='submit'>SEND MESSAGE</button>)
             }
                                     
         </form>

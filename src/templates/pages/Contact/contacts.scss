@@ -77,7 +77,7 @@
                 @include respond-to(xs) {        
                     margin-left: 10px;            
                 }
-                & h6 {
+                & h2 {
                     color: $dark-dark;
                     font-size: 25px;
                     @include respond-to(xs) {        

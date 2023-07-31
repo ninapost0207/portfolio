@@ -2,7 +2,10 @@
 @import '../../../assets/styles/base/mixins';
 .form {
     width: 45%;
-    
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
     @include respond-to(lg) {        
         width: 48%;
     }
@@ -14,16 +17,14 @@
     }
     
 
-    
-    &__item {
-        padding-top: 37px;
-        @include respond-to(lg) {        
-            padding-top: 33px;
-        }
-    }
 
     &__label {
         font-size: 20px;
+        padding-top: 37px;
+        
+        @include respond-to(lg) {        
+            padding-top: 33px;
+        }
     }
     &__input {
         height: 55px;

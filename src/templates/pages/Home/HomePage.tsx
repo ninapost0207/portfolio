@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import gitHub from "../../../assets/icons/github.svg";
 import linkedIn from "../../../assets/icons/linkedin.svg";
 import facebook from "../../../assets/icons/facebook.svg";
@@ -5,6 +6,7 @@ import './home.scss';
 import { motion } from "framer-motion";
 
 export default function Home () {
+    useEffect(() => {document.title = 'Home Page' || "Nina Postnikova";});
     return (
         <motion.div            
             initial={{ opacity: 0 }}
@@ -16,7 +18,7 @@ export default function Home () {
             <div className='home-page container'>
                 <div className='home-page__content'>
                     <h1>Hello, I am Nina Postnikova</h1>
-                    <h3>I am a Frontend developer. Adept at writing well-structured, organized code and employing a mobile-first approach.</h3>
+                    <p>I am a Frontend developer. Adept at writing well-structured, organized code and employing a mobile-first approach.</p>
                     <div className='home-page__icons-block flex flex-row justify-between  align-center'>
                         <a href="https://github.com/ninapost0207" target='blank' className='home-page__icons-block__item'>
                             <img src={gitHub} alt="gitHub" className='home-page__icon' />

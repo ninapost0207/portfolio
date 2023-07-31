@@ -35,8 +35,13 @@ body {
                 }
             }
         }
-
+        .ReactModal__Overlay {
+            background-color: $dark-dark !important;            
+        }
         .home-page {
+            p {
+                color: $beige;
+            }
             img {
                 filter: invert(87%) sepia(55%) saturate(478%) hue-rotate(300deg) brightness(101%) contrast(108%);
                 opacity: 1;
@@ -47,7 +52,7 @@ body {
                 &__item {
                     background-color: $dark;
                 }
-                h6 {
+                h2 {
                     color: $white;
                 }
                 p {
@@ -62,7 +67,7 @@ body {
         }
         
         .cv-page {
-            h5 {
+            p {
                 color: $light;
             }
             .skill-graph {    
@@ -90,7 +95,7 @@ body {
                         border-bottom: 4px solid $light-light;
                               
                     }
-                    h5 {                
+                    h2 {                
                         color: $beige;
                     }
                 }
@@ -348,7 +353,10 @@ button {
             box-shadow: 2px 2px 10px 5px $dark;
         }
     }
-    
+    &:focus {        
+        outline-offset: 0px;
+        outline: none;                
+    }
 }
 
 

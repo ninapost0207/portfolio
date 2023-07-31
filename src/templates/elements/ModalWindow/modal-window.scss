@@ -1,7 +1,7 @@
 @import '../../../assets/styles/base/variables';
 @import '../../../assets/styles/base/mixins';
 .modal {
-  transform:  translate(-50%, -50%);
+  transform: translate(-50%, -50%);
   position: absolute;
   top: 50%;
   left: 50%;
@@ -23,7 +23,7 @@
   
     
     &__button {
-        padding: 10px;
+        padding: 25px;
         background: none;
         box-shadow: none;
         position: absolute;
@@ -76,11 +76,13 @@
   opacity: 0;
   transform: translateX(-100px);
   transition: all 500ms ease-in-out;
+  background-color: $main !important;
 }
 
 .ReactModal__Overlay--after-open {
   opacity: 1;
   transform: translateX(0px);
+  z-index: 16;  
 }
 
 .ReactModal__Overlay--before-close {

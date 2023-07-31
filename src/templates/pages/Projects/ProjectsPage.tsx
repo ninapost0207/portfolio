@@ -1,4 +1,4 @@
-import { useMemo, useState } from "react";
+import { useMemo, useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import './projects.scss';
 import Gallery from "../../elements/Gallery/Gallery";
@@ -6,6 +6,7 @@ import  portfolio from '../../../assets/data/portfolio'
 import link from '../../../assets/icons/link.svg';
 
 export default function Projects () {
+    useEffect(() => {document.title = 'My Projects' || "Nina Postnikova";});
     const [activeSlide, setActiveSlide] = useState<number>(0)
     const [showScrollButton, setShowScrollButton] = useState<boolean>(false)
     
@@ -51,8 +52,8 @@ export default function Projects () {
         {portfolio.map((project) => {
             return (
                 <div className="main-slide__item" key={project.href}>   
-                    <h5>{project.description}</h5>
-                    <h5>{project.stack}</h5>
+                    <h2>{project.description}</h2>
+                    <h2>Stack: {project.stack}</h2>
                     <div className="main-slide__image-container">
                         <Gallery images={project.photos} href={project.href} />
                     </div>
@@ -77,10 +78,10 @@ export default function Projects () {
                 {leftSlide}   
                 {rightSlide}
                 <div className="controls">
-                    <button className="button_down projects-page__button" onClick={() => onSlideClick(activeSlide-1)}>
+                    <button tabIndex={0} className="button_down projects-page__button" aria-label={`${activeSlide - 1}`} onClick={() => onSlideClick(activeSlide-1)}>
                         <div className="arrow arrow_down"></div>
                     </button>
-                    <button className="button_up  projects-page__button" onClick={() => onSlideClick(activeSlide+1)}>
+                    <button tabIndex={0} className="button_up  projects-page__button" aria-label={`${activeSlide + 1}`} onClick={() => onSlideClick(activeSlide+1)}>
                         <div className=" arrow arrow_up"></div>
                     </button>
                 </div>
